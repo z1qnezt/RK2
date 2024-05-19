@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/Users/mihailerosenko/z1qnezt/workspace/RK2/CMakeLists.txt"
+  "/Users/mihailerosenko/z1qnezt/workspace/RK2/CPack.cmake"
   "CMakeFiles/3.29.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.29.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.29.2/CMakeSystem.cmake"
@@ -19,11 +20,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/CMakeLanguageInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/CPack.cmake"
+  "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/CPackComponent.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Compiler/AppleClang-C.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Compiler/Clang.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Compiler/GNU.cmake"
+  "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/InstallRequiredSystemLibraries.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake"
@@ -32,6 +36,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Platform/Darwin.cmake"
   "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Modules/Platform/UnixPaths.cmake"
+  "/opt/homebrew/Cellar/cmake/3.29.2/share/cmake/Templates/CPackConfig.cmake.in"
   )
 
 # The corresponding makefile is:
@@ -42,10 +47,15 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "CPackConfig.cmake"
+  "CPackSourceConfig.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/StaticShapes.dir/DependInfo.cmake"
+  "CMakeFiles/DynamicShapes.dir/DependInfo.cmake"
+  "CMakeFiles/ConceptualExample.dir/DependInfo.cmake"
+  "CMakeFiles/Shapes.dir/DependInfo.cmake"
   )

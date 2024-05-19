@@ -83,65 +83,20 @@ CMakeFiles/Shapes.dir/Program.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Shapes.dir/Program.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mihailerosenko/z1qnezt/workspace/RK2/Program.cpp -o CMakeFiles/Shapes.dir/Program.cpp.s
 
-CMakeFiles/Shapes.dir/ConceptualExample.cpp.o: CMakeFiles/Shapes.dir/flags.make
-CMakeFiles/Shapes.dir/ConceptualExample.cpp.o: /Users/mihailerosenko/z1qnezt/workspace/RK2/ConceptualExample.cpp
-CMakeFiles/Shapes.dir/ConceptualExample.cpp.o: CMakeFiles/Shapes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mihailerosenko/z1qnezt/workspace/RK2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Shapes.dir/ConceptualExample.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Shapes.dir/ConceptualExample.cpp.o -MF CMakeFiles/Shapes.dir/ConceptualExample.cpp.o.d -o CMakeFiles/Shapes.dir/ConceptualExample.cpp.o -c /Users/mihailerosenko/z1qnezt/workspace/RK2/ConceptualExample.cpp
-
-CMakeFiles/Shapes.dir/ConceptualExample.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Shapes.dir/ConceptualExample.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mihailerosenko/z1qnezt/workspace/RK2/ConceptualExample.cpp > CMakeFiles/Shapes.dir/ConceptualExample.cpp.i
-
-CMakeFiles/Shapes.dir/ConceptualExample.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Shapes.dir/ConceptualExample.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mihailerosenko/z1qnezt/workspace/RK2/ConceptualExample.cpp -o CMakeFiles/Shapes.dir/ConceptualExample.cpp.s
-
-CMakeFiles/Shapes.dir/DynamicShapes.cpp.o: CMakeFiles/Shapes.dir/flags.make
-CMakeFiles/Shapes.dir/DynamicShapes.cpp.o: /Users/mihailerosenko/z1qnezt/workspace/RK2/DynamicShapes.cpp
-CMakeFiles/Shapes.dir/DynamicShapes.cpp.o: CMakeFiles/Shapes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mihailerosenko/z1qnezt/workspace/RK2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Shapes.dir/DynamicShapes.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Shapes.dir/DynamicShapes.cpp.o -MF CMakeFiles/Shapes.dir/DynamicShapes.cpp.o.d -o CMakeFiles/Shapes.dir/DynamicShapes.cpp.o -c /Users/mihailerosenko/z1qnezt/workspace/RK2/DynamicShapes.cpp
-
-CMakeFiles/Shapes.dir/DynamicShapes.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Shapes.dir/DynamicShapes.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mihailerosenko/z1qnezt/workspace/RK2/DynamicShapes.cpp > CMakeFiles/Shapes.dir/DynamicShapes.cpp.i
-
-CMakeFiles/Shapes.dir/DynamicShapes.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Shapes.dir/DynamicShapes.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mihailerosenko/z1qnezt/workspace/RK2/DynamicShapes.cpp -o CMakeFiles/Shapes.dir/DynamicShapes.cpp.s
-
-CMakeFiles/Shapes.dir/StaticShapes.cpp.o: CMakeFiles/Shapes.dir/flags.make
-CMakeFiles/Shapes.dir/StaticShapes.cpp.o: /Users/mihailerosenko/z1qnezt/workspace/RK2/StaticShapes.cpp
-CMakeFiles/Shapes.dir/StaticShapes.cpp.o: CMakeFiles/Shapes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mihailerosenko/z1qnezt/workspace/RK2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Shapes.dir/StaticShapes.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Shapes.dir/StaticShapes.cpp.o -MF CMakeFiles/Shapes.dir/StaticShapes.cpp.o.d -o CMakeFiles/Shapes.dir/StaticShapes.cpp.o -c /Users/mihailerosenko/z1qnezt/workspace/RK2/StaticShapes.cpp
-
-CMakeFiles/Shapes.dir/StaticShapes.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Shapes.dir/StaticShapes.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mihailerosenko/z1qnezt/workspace/RK2/StaticShapes.cpp > CMakeFiles/Shapes.dir/StaticShapes.cpp.i
-
-CMakeFiles/Shapes.dir/StaticShapes.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Shapes.dir/StaticShapes.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mihailerosenko/z1qnezt/workspace/RK2/StaticShapes.cpp -o CMakeFiles/Shapes.dir/StaticShapes.cpp.s
-
 # Object files for target Shapes
 Shapes_OBJECTS = \
-"CMakeFiles/Shapes.dir/Program.cpp.o" \
-"CMakeFiles/Shapes.dir/ConceptualExample.cpp.o" \
-"CMakeFiles/Shapes.dir/DynamicShapes.cpp.o" \
-"CMakeFiles/Shapes.dir/StaticShapes.cpp.o"
+"CMakeFiles/Shapes.dir/Program.cpp.o"
 
 # External object files for target Shapes
 Shapes_EXTERNAL_OBJECTS =
 
 Shapes: CMakeFiles/Shapes.dir/Program.cpp.o
-Shapes: CMakeFiles/Shapes.dir/ConceptualExample.cpp.o
-Shapes: CMakeFiles/Shapes.dir/DynamicShapes.cpp.o
-Shapes: CMakeFiles/Shapes.dir/StaticShapes.cpp.o
 Shapes: CMakeFiles/Shapes.dir/build.make
+Shapes: libStaticShapes.a
+Shapes: libConceptualExample.a
+Shapes: libDynamicShapes.a
 Shapes: CMakeFiles/Shapes.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mihailerosenko/z1qnezt/workspace/RK2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Shapes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mihailerosenko/z1qnezt/workspace/RK2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Shapes"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Shapes.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

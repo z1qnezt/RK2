@@ -65,6 +65,26 @@ CMAKE_BINARY_DIR = /Users/mihailerosenko/z1qnezt/workspace/RK2/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cpack --config ./CPackSourceConfig.cmake /Users/mihailerosenko/z1qnezt/workspace/RK2/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -84,6 +104,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -129,6 +194,117 @@ StaticShapes/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/StaticShapes.dir/build.make CMakeFiles/StaticShapes.dir/build
 .PHONY : StaticShapes/fast
 
+#=============================================================================
+# Target rules for targets named DynamicShapes
+
+# Build rule for target.
+DynamicShapes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DynamicShapes
+.PHONY : DynamicShapes
+
+# fast build rule for target.
+DynamicShapes/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DynamicShapes.dir/build.make CMakeFiles/DynamicShapes.dir/build
+.PHONY : DynamicShapes/fast
+
+#=============================================================================
+# Target rules for targets named ConceptualExample
+
+# Build rule for target.
+ConceptualExample: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ConceptualExample
+.PHONY : ConceptualExample
+
+# fast build rule for target.
+ConceptualExample/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConceptualExample.dir/build.make CMakeFiles/ConceptualExample.dir/build
+.PHONY : ConceptualExample/fast
+
+#=============================================================================
+# Target rules for targets named Shapes
+
+# Build rule for target.
+Shapes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Shapes
+.PHONY : Shapes
+
+# fast build rule for target.
+Shapes/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/build
+.PHONY : Shapes/fast
+
+ConceptualExample.o: ConceptualExample.cpp.o
+.PHONY : ConceptualExample.o
+
+# target to build an object file
+ConceptualExample.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConceptualExample.dir/build.make CMakeFiles/ConceptualExample.dir/ConceptualExample.cpp.o
+.PHONY : ConceptualExample.cpp.o
+
+ConceptualExample.i: ConceptualExample.cpp.i
+.PHONY : ConceptualExample.i
+
+# target to preprocess a source file
+ConceptualExample.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConceptualExample.dir/build.make CMakeFiles/ConceptualExample.dir/ConceptualExample.cpp.i
+.PHONY : ConceptualExample.cpp.i
+
+ConceptualExample.s: ConceptualExample.cpp.s
+.PHONY : ConceptualExample.s
+
+# target to generate assembly for a file
+ConceptualExample.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ConceptualExample.dir/build.make CMakeFiles/ConceptualExample.dir/ConceptualExample.cpp.s
+.PHONY : ConceptualExample.cpp.s
+
+DynamicShapes.o: DynamicShapes.cpp.o
+.PHONY : DynamicShapes.o
+
+# target to build an object file
+DynamicShapes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DynamicShapes.dir/build.make CMakeFiles/DynamicShapes.dir/DynamicShapes.cpp.o
+.PHONY : DynamicShapes.cpp.o
+
+DynamicShapes.i: DynamicShapes.cpp.i
+.PHONY : DynamicShapes.i
+
+# target to preprocess a source file
+DynamicShapes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DynamicShapes.dir/build.make CMakeFiles/DynamicShapes.dir/DynamicShapes.cpp.i
+.PHONY : DynamicShapes.cpp.i
+
+DynamicShapes.s: DynamicShapes.cpp.s
+.PHONY : DynamicShapes.s
+
+# target to generate assembly for a file
+DynamicShapes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DynamicShapes.dir/build.make CMakeFiles/DynamicShapes.dir/DynamicShapes.cpp.s
+.PHONY : DynamicShapes.cpp.s
+
+Program.o: Program.cpp.o
+.PHONY : Program.o
+
+# target to build an object file
+Program.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/Program.cpp.o
+.PHONY : Program.cpp.o
+
+Program.i: Program.cpp.i
+.PHONY : Program.i
+
+# target to preprocess a source file
+Program.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/Program.cpp.i
+.PHONY : Program.cpp.i
+
+Program.s: Program.cpp.s
+.PHONY : Program.s
+
+# target to generate assembly for a file
+Program.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/Program.cpp.s
+.PHONY : Program.cpp.s
+
 StaticShapes.o: StaticShapes.cpp.o
 .PHONY : StaticShapes.o
 
@@ -160,8 +336,26 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... ConceptualExample"
+	@echo "... DynamicShapes"
+	@echo "... Shapes"
 	@echo "... StaticShapes"
+	@echo "... ConceptualExample.o"
+	@echo "... ConceptualExample.i"
+	@echo "... ConceptualExample.s"
+	@echo "... DynamicShapes.o"
+	@echo "... DynamicShapes.i"
+	@echo "... DynamicShapes.s"
+	@echo "... Program.o"
+	@echo "... Program.i"
+	@echo "... Program.s"
 	@echo "... StaticShapes.o"
 	@echo "... StaticShapes.i"
 	@echo "... StaticShapes.s"
