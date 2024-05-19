@@ -162,9 +162,9 @@ CMakeFiles/ConceptualExample.dir/clean:
 # Target rules for target CMakeFiles/Shapes.dir
 
 # All Build rule for target.
+CMakeFiles/Shapes.dir/all: CMakeFiles/StaticShapes.dir/all
 CMakeFiles/Shapes.dir/all: CMakeFiles/DynamicShapes.dir/all
 CMakeFiles/Shapes.dir/all: CMakeFiles/ConceptualExample.dir/all
-CMakeFiles/Shapes.dir/all: CMakeFiles/StaticShapes.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mihailerosenko/z1qnezt/workspace/RK2/build/CMakeFiles --progress-num=5,6 "Built target Shapes"
