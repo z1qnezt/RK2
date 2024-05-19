@@ -1,24 +1,25 @@
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.27)
 
-project(Shapes)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+option(BUILD_TESTS "Build tests" OFF)
 
-add_executable(Shapes
-    Program.cpp 
-    ConceptualExample.cpp
-    DynamicShapes.cpp
-    StaticShapes.cpp
-)
+if(BUILD_TESTS)                   
+  add_compile_options(--coverage) 
+endif()
 
-set_target_properties(Shapes PROPERTIES
-    CXX_STANDARD 11
-    CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS NO
-)
+project (StaticShapes)
 
-enable_testing()
+add_library(StaticShapes STATIC ${CMAKE_CURRENT_SOURCE_DIR}/StaticShapes.cpp)
+target_include_directories(StaticShapes PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/)
 
-add_subdirectory(third-party/gtest)
+target_link_libraries(StaticShapes gcov)
 
-add_executable(tests tests.cpp)
-target_link_libraries(tests gtest gtest_main)
-add_test(NAME MyTest COMMAND tests)
+if(BUILD_TESTS)
+  enable_testing()
+  add_subdirectory(third-party/gtest)
+  file(GLOB StaticShapes_TEST_SOURCES test.cpp)
+  add_executable(check ${StaticShapes_TEST_SOURCES})
+  target_link_libraries(check StaticShapes gtest_main)
+  add_test(NAME check COMMAND check)
+endif()
