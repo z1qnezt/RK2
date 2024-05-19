@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /Users/mihailerosenko/z1qnezt/workspace/RK2/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -84,6 +94,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/Cellar/cmake/3.29.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -117,24 +172,89 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named AbstractClassVsInterface
+# Target rules for targets named Shapes
 
 # Build rule for target.
-AbstractClassVsInterface: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AbstractClassVsInterface
-.PHONY : AbstractClassVsInterface
+Shapes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Shapes
+.PHONY : Shapes
 
 # fast build rule for target.
-AbstractClassVsInterface/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/build
-.PHONY : AbstractClassVsInterface/fast
+Shapes/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/build
+.PHONY : Shapes/fast
+
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/CMakeFiles/gmock.dir/build.make third-party/gtest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/build.make third-party/gtest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f third-party/gtest/googletest/CMakeFiles/gtest.dir/build.make third-party/gtest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f third-party/gtest/googletest/CMakeFiles/gtest_main.dir/build.make third-party/gtest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 ConceptualExample.o: ConceptualExample.cpp.o
 .PHONY : ConceptualExample.o
 
 # target to build an object file
 ConceptualExample.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/ConceptualExample.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/ConceptualExample.cpp.o
 .PHONY : ConceptualExample.cpp.o
 
 ConceptualExample.i: ConceptualExample.cpp.i
@@ -142,7 +262,7 @@ ConceptualExample.i: ConceptualExample.cpp.i
 
 # target to preprocess a source file
 ConceptualExample.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/ConceptualExample.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/ConceptualExample.cpp.i
 .PHONY : ConceptualExample.cpp.i
 
 ConceptualExample.s: ConceptualExample.cpp.s
@@ -150,7 +270,7 @@ ConceptualExample.s: ConceptualExample.cpp.s
 
 # target to generate assembly for a file
 ConceptualExample.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/ConceptualExample.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/ConceptualExample.cpp.s
 .PHONY : ConceptualExample.cpp.s
 
 DynamicShapes.o: DynamicShapes.cpp.o
@@ -158,7 +278,7 @@ DynamicShapes.o: DynamicShapes.cpp.o
 
 # target to build an object file
 DynamicShapes.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/DynamicShapes.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/DynamicShapes.cpp.o
 .PHONY : DynamicShapes.cpp.o
 
 DynamicShapes.i: DynamicShapes.cpp.i
@@ -166,7 +286,7 @@ DynamicShapes.i: DynamicShapes.cpp.i
 
 # target to preprocess a source file
 DynamicShapes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/DynamicShapes.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/DynamicShapes.cpp.i
 .PHONY : DynamicShapes.cpp.i
 
 DynamicShapes.s: DynamicShapes.cpp.s
@@ -174,7 +294,7 @@ DynamicShapes.s: DynamicShapes.cpp.s
 
 # target to generate assembly for a file
 DynamicShapes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/DynamicShapes.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/DynamicShapes.cpp.s
 .PHONY : DynamicShapes.cpp.s
 
 Program.o: Program.cpp.o
@@ -182,7 +302,7 @@ Program.o: Program.cpp.o
 
 # target to build an object file
 Program.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/Program.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/Program.cpp.o
 .PHONY : Program.cpp.o
 
 Program.i: Program.cpp.i
@@ -190,7 +310,7 @@ Program.i: Program.cpp.i
 
 # target to preprocess a source file
 Program.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/Program.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/Program.cpp.i
 .PHONY : Program.cpp.i
 
 Program.s: Program.cpp.s
@@ -198,7 +318,7 @@ Program.s: Program.cpp.s
 
 # target to generate assembly for a file
 Program.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/Program.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/Program.cpp.s
 .PHONY : Program.cpp.s
 
 StaticShapes.o: StaticShapes.cpp.o
@@ -206,7 +326,7 @@ StaticShapes.o: StaticShapes.cpp.o
 
 # target to build an object file
 StaticShapes.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/StaticShapes.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/StaticShapes.cpp.o
 .PHONY : StaticShapes.cpp.o
 
 StaticShapes.i: StaticShapes.cpp.i
@@ -214,7 +334,7 @@ StaticShapes.i: StaticShapes.cpp.i
 
 # target to preprocess a source file
 StaticShapes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/StaticShapes.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/StaticShapes.cpp.i
 .PHONY : StaticShapes.cpp.i
 
 StaticShapes.s: StaticShapes.cpp.s
@@ -222,8 +342,32 @@ StaticShapes.s: StaticShapes.cpp.s
 
 # target to generate assembly for a file
 StaticShapes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AbstractClassVsInterface.dir/build.make CMakeFiles/AbstractClassVsInterface.dir/StaticShapes.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Shapes.dir/build.make CMakeFiles/Shapes.dir/StaticShapes.cpp.s
 .PHONY : StaticShapes.cpp.s
+
+tests.o: tests.cpp.o
+.PHONY : tests.o
+
+# target to build an object file
+tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests.cpp.o
+.PHONY : tests.cpp.o
+
+tests.i: tests.cpp.i
+.PHONY : tests.i
+
+# target to preprocess a source file
+tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests.cpp.i
+.PHONY : tests.cpp.i
+
+tests.s: tests.cpp.s
+.PHONY : tests.s
+
+# target to generate assembly for a file
+tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests.cpp.s
+.PHONY : tests.cpp.s
 
 # Help Target
 help:
@@ -232,8 +376,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... AbstractClassVsInterface"
+	@echo "... test"
+	@echo "... Shapes"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... tests"
 	@echo "... ConceptualExample.o"
 	@echo "... ConceptualExample.i"
 	@echo "... ConceptualExample.s"
@@ -246,6 +400,9 @@ help:
 	@echo "... StaticShapes.o"
 	@echo "... StaticShapes.i"
 	@echo "... StaticShapes.s"
+	@echo "... tests.o"
+	@echo "... tests.i"
+	@echo "... tests.s"
 .PHONY : help
 
 
