@@ -3,26 +3,22 @@ on:
   push:
     branches:
       - main
+name: actions
+on:
+  push:
+   branches: [master]
   pull_request:
-    branches:
-      - main
-jobs:
-  build:
-    runs-on: ubuntu-latest
+   branches: [master]
+jobs: 
+  build_Linux:
+   runs-on: ubuntu-latest
+   steps:
+   - uses: actions/checkout@v4
+   - name: Adding gtest
+     run: git clone https://github.com/google/googletest.git third-party/gtest -b release-1.11.0
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+   - name: Config ConceptualExample with tests
+     run: cmake -H. -B ${{github.workspace}}/build -DBUILD_TESTS=ON
 
-    - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y cmake g++ catch
-
-    - name: Configure CMake
-      run: cmake -B build -S .
-
-    - name: Build
-      run: cmake --build build
-
-    - name: Run tests
-      run: ./build/tests
-
+   - name: Build ConceptualExample
+     run: cmake --build ${{github.workspace}}/build
