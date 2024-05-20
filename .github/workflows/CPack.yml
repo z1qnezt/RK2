@@ -34,7 +34,7 @@ jobs:
         with:
           tag: v1.0.5
           artifacts: "_build/*.deb,_build/*.tar.gz,_build/*.zip"
-          replaceArtedacts: false
+          replaceArtifacts: false
           token: ${{ secrets.GITHUB_TOKEN }}
           allowUpdates: true
       - name: Artifacts
