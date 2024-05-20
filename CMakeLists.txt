@@ -1,21 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(Shapes)
-
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 option(BUILD_TESTS "Build tests" OFF)
 option(PACK "pack" OFF)
 
-add_library(StaticShapes ${CMAKE_CURRENT_SOURCE_DIR}/StaticShapes.cpp)
-add_library(DynamicShapes ${CMAKE_CURRENT_SOURCE_DIR}/DynamicShapes.cpp)
-add_library(ConceptualExample ${CMAKE_CURRENT_SOURCE_DIR}/ConceptualExample.cpp)
-
-add_executable(Shapes ${CMAKE_CURRENT_SOURCE_DIR}/Program.cpp)
-
-target_link_libraries(Shapes StaticShapes)
-target_link_libraries(Shapes ConceptualExample)
-target_link_libraries(Shapes DynamicShapes)
+project(program)
+file(GLOB SOURCES "StaticShapes.cpp" , "DynamicShapes.cp" , "ConceptualExample.cpp" , "ChatRoom.cpp" , "Program.cpp")
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 if(BUILD_TESTS)
   enable_testing()
@@ -25,11 +18,5 @@ if(BUILD_TESTS)
   target_link_libraries(check gtest_main)
   add_test(NAME check COMMAND check)
 endif()
-
-install(TARGETS Shapes
-    RUNTIME DESTINATION bin
-)
-
-set(CPACK_PACKAGE_VERSION 1.0.0)
 
 include(CPack.cmake)
