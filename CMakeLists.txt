@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.10)
 
 project(Shapes)
 
@@ -18,13 +18,6 @@ target_link_libraries(Shapes DynamicShapes)
 install(TARGETS Shapes
     RUNTIME DESTINATION bin
 )
-
-set(PRINT_VERSION_PATCH 0)
-set(PRINT_VERSION_MINOR 1)
-set(PRINT_VERSION_MAJOR 0)
-set(PRINT_VERSION_TWEAK 0)
-set(PRINT_VERSION ${PRINT_VERSION_MAJOR}.\${PRINT_VERSION_MINOR}.\${PRINT_VERSION_PATCH}.\${PRINT_VERSION_TWEAK})
-set(PRINT_VERSION_STRING "v\${PRINT_VERSION}")
 
 set(CPACK_PACKAGE_VERSION 1.0.0)
 
