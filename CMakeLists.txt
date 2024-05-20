@@ -4,6 +4,8 @@ project(Shapes)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+option(BUILD_TESTS "Build tests" OFF)
+option(PACK "pack" OFF)
 
 add_library(StaticShapes ${CMAKE_CURRENT_SOURCE_DIR}/StaticShapes.cpp)
 add_library(DynamicShapes ${CMAKE_CURRENT_SOURCE_DIR}/DynamicShapes.cpp)
