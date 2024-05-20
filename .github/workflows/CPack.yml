@@ -1,10 +1,13 @@
 name: CPack
-
 on:
   push:
     branches: [master]
+    tags:
+      - "v*.*.*"
   pull_request:
     branches: [master]
+    tags:
+      - "v*.*.*"
 
 jobs:
   build_packages_Linux:
