@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(BUILD_TESTS "Build tests" OFF)
 option(PACK "pack" OFF)
 
-project(program)
-file(GLOB SOURCES "StaticShapes.cpp" , "DynamicShapes.cp" , "ConceptualExample.cpp" , "ChatRoom.cpp" , "Program.cpp")
+project(Shapes)
+file(GLOB SOURCES "StaticShapes.cpp" , "DynamicShapes.cpp" , "ConceptualExample.cpp" , "ChatRoom.cpp" , "Program.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 if(BUILD_TESTS)
