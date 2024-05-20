@@ -7,7 +7,7 @@ option(BUILD_TESTS "Build tests" OFF)
 option(PACK "pack" OFF)
 
 project(Shapes)
-file(GLOB SOURCES "StaticShapes.cpp" , "DynamicShapes.cpp" , "ConceptualExample.cpp" , "ChatRoom.cpp" , "Program.cpp")
+file(GLOB SOURCES "StaticShapes.cpp" , "DynamicShapes.cpp" , "ConceptualExample.cpp" , "Program.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 if(BUILD_TESTS)
